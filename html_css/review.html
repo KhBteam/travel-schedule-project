@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <meta name="description" content="서로의 여행 정보를 공유하는 사이트">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .bgimg {
+                background: url(images/seychelles.png);
+                background-size: cover;
+                height: 40vh;
+                overflow:hidden;
+            }
+            h1 {
+                text-align: center;
+                color: white;
+                margin-top: 6%;
+                font-size:60px;
+            }
+            h3 {
+                text-align: center;
+                color: white;
+                margin-top:2%
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+        <header class="page-header wrapper">
+            <a href="index.html"><img class="logo" src="category/images/logo2.png" alt="로고"></a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="review.html">후기페이지</a></li>
+                    <li><a href="detail.html">상세페이지</a></li>
+                    <li><a href="sign_up_update.html">회원정보페이지</a></li>
+                    <li><a href="faq.html">문의페이지</a></li>
+                    <li><a href="login.html" style="color: black; font-size: 1.15rem;">로그인</a></li>
+                    <li><a href="sign_up.html" style="color: black; font-size: 1.15rem;">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class=bgimg>
+            <h1>후기</h1>
+            <h3>When you walk along the blue valley and the white sky,<br>
+            you arrive the green valley.</h3>
+        </div>
+        <main>
+            <div class="board_list_wrap">
+                <div class="board_list">
+                    <div class="board_list_head">
+                        <div class="num">번호</div>
+                        <div class="tit">제목</div>
+                        <div class="writer">글쓴이</div>
+                        <div class="date">작성일</div>
+                    </div>
+                    <div class="board_list_body">
+                        <div class="item">
+                            <div class="num">5</div>
+                            <div class="tit"><a href="#">크롬 개발자도구 활용하는 방법</a></div>
+                            <div class="writer">관리자</div>
+                            <div class="date">2019-11-20</div>
+                        </div>
+                        <div class="item">
+                            <div class="num">4</div>
+                            <div class="tit"><a href="#">html과 css로 웹사이트를 만들어요.</a></div>
+                            <div class="writer">관리자</div>
+                            <div class="date">2019-11-12</div>
+                        </div>
+                        <div class="item">
+                            <div class="num">3</div>
+                            <div class="tit"><a href="#">코딩은 즐거워요.</a></div>
+                            <div class="writer">관리자</div>
+                            <div class="date">2019-11-02</div>
+                        </div>
+                        <div class="item">
+                            <div class="num">2</div>
+                            <div class="tit"><a href="#">전주코딩학원은 전주 법조타운에 있습니다.</a></div>
+                            <div class="writer">관리자</div>
+                            <div class="date">2019-10-28</div>
+                        </div>
+                        <div class="item">
+                            <div class="num">1</div>
+                            <div class="tit"><a href="#">전주코딩학원 공지사항</a></div>
+                            <div class="writer">관리자</div>
+                            <div class="date">2019-10-24</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review_paging">
+                    <a href="#" class="bt first">처음 페이지</a>
+                    <a href="#" class="bt prev">이전 페이지</a>
+                    <a href="#" class="num on">1</a>
+                    <a href="#" class="num">2</a>
+                    <a href="#" class="num">3</a>
+                    <a href="#" class="bt next">다음 페이지</a>
+                    <a href="#" class="bt last">마지막 페이지</a>
+                </div>
+            </div>
+            <div class="review_grid">
+                <form method="get" class="search_box">
+                    <input id="review_list" name="faq_list" class="review_search" list="review_item" placeholder="항목">
+                    <datalist id="review_item">
+                        <option value="제목"></option>
+                        <option value="글쓴이"></option>
+                        <option value="작성일"></option>
+                    </datalist>
+                    <input type="text" class="review_search sear" placeholder="제목">
+                    <input type="button" class="btn_reviewsear" value="검색">
+                </form>
+                <input type="button" class="btn_reviewwrite" value="작성하기" onclick="location.href='review_write.html'">
+            </div>
+        </main>
+    </body>
+</html>

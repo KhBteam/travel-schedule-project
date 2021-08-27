@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <meta name="description" content="서로의 여행 정보를 공유하는 사이트">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            hr {
+                border: 0.5px solid rgba(200, 200, 200,.4);
+                margin:5px 0 0 2%;
+            }
+            ::placeholder { font-weight: bold;}
+        </style>
+    </head>
+
+    <body>
+        <header class="page-header wrapper">
+            <a href="index.html"><img class="logo" src="category/images/logo2.png" alt="로고"></a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="review.html">후기페이지</a></li>
+                    <li><a href="detail.html">상세페이지</a></li>
+                    <li><a href="sign_up_update.html">회원정보페이지</a></li>
+                    <li><a href="faq.html">문의페이지</a></li>
+                    <li><a href="login.html" style="color: black; font-size: 1.15rem;">로그인</a></li>
+                    <li><a href="sign_up.html" style="color: black; font-size: 1.15rem;">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form method="get" class="main_container">
+                <div class="box_one">
+                    <div class="box_two">
+                        <div class="deep">
+                            <div class="or">
+                                <input id="ca_it" name="ca_it" list="item" placeholder="항목">
+                                <datalist id="item">
+                                    <option value="여행 문의"></option>
+                                    <option value="시간 문의"></option>
+                                    <option value="장소 문의"></option>
+                                </datalist>
+                                <input type="text" placeholder="제주도 가고 싶어요." disabled>
+                            </div>
+                        </div>
+                        <div class="deep">
+                            <input type="text" placeholder="작성자" disabled>
+                            <input type="date" id="data" min="1990-01-01" max="2021-08-31" disabled>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" class="btn" value="수정">
+                        <input type="button" class="btn" value="삭제">
+                        <input type="button" class="btn" value="목록">
+                    </div>
+                </div>
+                <hr width="96%">
+                <div class="box2">
+                    <textarea cols="50" rows="10" placeholder="비행기 타고 가고 싶어요."></textarea>
+                </div>
+                <hr width="96%">
+                <div class="box3">
+                    <input type="text" placeholder="답변 등록">
+                    <input type="date" min="1990-01-01" max="2021-08-31" disabled>
+                </div>
+                <div class="box4">
+                    <textarea cols="50" rows="10" placeholder="답변을 작성해 주세요."></textarea>
+                </div>
+                <div class="btn_ans">
+                    <input type="button" value="답변 작성하기">
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <meta name="description" content="서로의 여행 정보를 공유하는 사이트">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .grid {
+                display: grid;
+                gap: 30px;
+                grid-template-columns: 1fr 1fr;
+                margin: 2%;
+            }
+            .title {
+                border: 1px solid white;
+                background-color: rgba(204, 204, 204, .3);
+                border-radius:5px;
+            }
+            p {
+                font-size: 20px;
+                text-align: center;
+            }
+            .page-header {
+                position: fixed;
+                top: 0; left: 50;
+                height: 100px;
+                background-color: rgba(204, 204, 204, .1);
+            }
+            input {
+                font-size: 20px;
+                width: 325px;
+                padding: 10px;
+                border: 0px;
+                outline: none;
+                float: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="page-header wrapper">
+            <a href="index.html"><img class="logo" src="category/images/logo2.png" alt="로고"></a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="review.html">후기페이지</a></li>
+                    <li><a href="detail.html">상세페이지</a></li>
+                    <li><a href="sign_up_update.html">회원정보페이지</a></li>
+                    <li><a href="faq.html">문의페이지</a></li>
+                    <li><a href="login.html" style="color: black; font-size: 1.15rem;">로그인</a></li>
+                    <li><a href="sign_up.html" style="color: black; font-size: 1.15rem;">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="wrap">
+            <h2 class="page-title">슬로건 / 사이트 이름</h2>
+            <div class="box"></div>
+            <div class="search">
+                <input type="text" placeholder="검색어 입력">
+                <button style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">검색</button> 
+            </div>
+        </div><!-- wrap -->
+        <h2 style="color:gray; margin-top:30px; margin-left: 200px;">추천 여행지</h2>
+        <div class="big_box">
+            <div class="place grid">
+                <div class="item">
+                    <img src="images/bali.png" alt="발리">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/vietnam.png" alt="베트남">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/cancun.png" alt="칸쿤">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/maldives.png" alt="몰디브">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/seychelles.png" alt="세이셸">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/tahiti.png" alt="타히티">
+                    <div class="title">
+                        <p>제목</p>
+                    </div>
+                </div>
+            </div><!-- grid -->
+        </div>
+    </body>
+</html>

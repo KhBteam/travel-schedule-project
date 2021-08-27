@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+        <meta name="description" content="서로의 여행 정보를 공유하는 사이트">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            .bgimg {
+                background: url(images/seychelles.png);
+                background-size: cover;
+                height: 40vh;
+                overflow:hidden;
+            }
+            h1 {
+                text-align: center;
+                color: white;
+                margin-top: 6%;
+                font-size:60px;
+            }
+            h3 {
+                text-align: center;
+                color: white;
+                margin-top:2%
+            }
+            .review_input {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .review_1 {
+                border:1px solid rgb(212, 212, 212);
+                border-radius: 5px;
+                width: 60%;
+                margin-top: 2%;
+            }
+            .review_2 {
+                border:1px solid rgb(212, 212, 212);
+                border-radius: 5px;
+                width: 60%;
+                margin-top: 1%;
+            }
+            .btn_review {
+                border:1px solid gray;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                background-color: gray;
+                width: 150px;
+                height: 40px;
+                margin-top: 2%;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <header class="page-header wrapper">
+            <a href="index.html"><img class="logo" src="category/images/logo2.png" alt="로고"></a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="review.html">후기페이지</a></li>
+                    <li><a href="detail.html">상세페이지</a></li>
+                    <li><a href="sign_up_update.html">회원정보페이지</a></li>
+                    <li><a href="faq.html">문의페이지</a></li>
+                    <li><a href="login.html" style="color: black; font-size: 1.15rem;">로그인</a></li>
+                    <li><a href="sign_up.html" style="color: black; font-size: 1.15rem;">회원가입</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class=bgimg>
+            <h1>후기</h1>
+            <h3>When you walk along the blue valley and the white sky,<br>
+            you arrive the green valley.</h3>
+        </div>
+        <form class="review_input" method="get">
+            <input type="text" class="review_1" placeholder="제목을 입력해주세요.">
+            <textarea cols="50" rows="10" class="review_2" placeholder="후기를 적어주세요."></textarea>
+            <input type="button" class="btn_review" value="등록하기" onclick="location.href='review.html'">
+        </form>
+    </body>
+</html>
