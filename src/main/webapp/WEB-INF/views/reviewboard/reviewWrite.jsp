@@ -71,7 +71,7 @@
             <nav>
                 <ul class="main-nav">
                     <li><a href="/board">후기페이지</a></li>
-                    <li><a href="detail.html">상세페이지</a></li>
+                    <li><a href="/board/{id}">상세페이지</a></li>
                     <li><a href="sign_up_update.html">회원정보페이지</a></li>
                     <li><a href="faq.html">문의페이지</a></li>
                     <li><a href="/auth/loginForm" style="color: black; font-size: 1.15rem;">로그인</a></li>

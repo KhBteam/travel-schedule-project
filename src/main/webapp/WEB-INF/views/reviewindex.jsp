@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -69,9 +75,11 @@
                     <c:forEach var="board" items="${boards}">
                         <div class="item">
 							<div class="num">${board.id}</div>
-                            <div class="tit"><a href="#">${board.title}</a></div>
-                              <div class="writer">${board.user.username}</div> 
-                            <div class="date">${board.createDate}</div>
+                            <div class="tit"><a href="/board/${board.id}">${board.title}</a></div>
+                            <div class="writer">${board.user.username}</div> 
+                            <div class="date"><fmt:formatDate pattern = "yyyy/MM/dd hh:mm" value="${board.createDate}"/></div>
+
+                            
                         </div>
                      </c:forEach>
                     </div>
