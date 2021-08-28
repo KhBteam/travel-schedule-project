@@ -29,13 +29,13 @@ public class ReviewBoardController {
 	@GetMapping("/board/{id}")
 	public String findById(@PathVariable int id, Model model) {
 		model.addAttribute("board", boardService.글상세보기(id));
-		return "board/detail";
+		return "reviewboard/reviewDetail";
 	}
 	
 	@GetMapping("/board/{id}/updateForm")
 	public String updateForm(@PathVariable int id, Model model) {
 		model.addAttribute("board", boardService.글상세보기(id));
-		return "board/updateForm";
+		return "reviewboard/updateForm";
 	}
 	
 	@GetMapping("/board/saveForm")
