@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
@@ -16,6 +16,7 @@
 <meta name="description" content="서로의 여행 정보를 공유하는 사이트">
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 <link rel="stylesheet" href="/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
 .page-header {
@@ -203,7 +204,6 @@ a:hover.map_Content {
 				</ul>
 			</nav>
 		</header>
-		<form method="get">
 			<div class="boxes">
 				<div>
 					<h1 class="title">${content.title}</h1>
@@ -221,57 +221,48 @@ a:hover.map_Content {
 						value="${content.address}">
 					<textarea cols="50" rows="20" class="date2" placeholder="간단한 소개글">${content.instruction}</textarea>
 				</div>
-				<div id="map"> <!-- 카카오 지도 -->
-					<table style=""> <!-- 카카오 지도 설명 => 이 부분이 없으면 지도가 안나옴 -->
-					<tr>
-						<td style=""><table style="">
-								<tr>
-									<td style=""><table style="">
-											<tr>
-												<td style="">
-												<div id="map_canvas"
-											style="border: 1px solid #ccc; margin: 0 0 0px 0;"></div>
-										</td>
+				<div id="map">
+					<!-- 카카오 지도 -->
+					<table style="">
+						<!-- 카카오 지도 설명 => 이 부분이 없으면 지도가 안나옴 -->
+						<tr>
+							<td style=""><table style="">
+									<tr>
+										<td style=""><table style="">
+												<tr>
+													<td style="">
+														<div id="map_canvas"
+															style="border: 1px solid #ccc; margin: 0 0 0px 0;"></div>
+													</td>
+												</tr>
+											</table></td>
 									</tr>
 								</table></td>
-							</tr>
-						</table></td>
-					</tr>
-				</table>
+						</tr>
+					</table>
 				</div>
 
 			</div>
 			<div class="boxes_three">
 				<div class="mini_box">
 					<h1 class="mini_title">사람들의 한줄평</h1>
-					<input type="button" class="btn" value="수정"> <input
-						type="button" class="btn" value="삭제">
 				</div>
 				<div>
-					<input type="text" class="date_1" placeholder="작성자"> <input
-						type="date" class="date_1" min="1990-01-01" max="2021-08-31"
-						disabled style="margin-left: 10px;"> <input type="text"
-						class="date_2" placeholder="간단한 소개글을 작성해주세요.">
+					<c:forEach var="reply" items="${content.replys}">
+						<input type="text" class="date_1" placeholder="작성자" value="${reply.user.username}"> 
+						<input type="text" class="date_1" value="${reply.createDate}" disabled style="margin-left: 10px;"> 
+						<input type="text" class="date_2" placeholder="간단한 소개글을 작성해주세요." value="${reply.content}">
+						<button onClick="index.replyDelete('${content.title}',${reply.id})">삭제</button>
+					</c:forEach>
 				</div>
 				<div>
-					<input type="text" class="date_1" placeholder="작성자"> <input
-						type="date" class="date_1" min="1990-01-01" max="2021-08-31"
-						disabled style="margin-left: 10px;"> <input type="text"
-						class="date_2" placeholder="간단한 소개글을 작성해주세요.">
-				</div>
-				<div>
-					<input type="text" class="date_1" placeholder="작성자"> <input
-						type="date" class="date_1" min="1990-01-01" max="2021-08-31"
-						disabled style="margin-left: 10px;"> <input type="text"
-						class="date_2" placeholder="간단한 한줄평을 작성해주세요.">
-				</div>
-				<div>
-					<input type="text" placeholder="한줄평을 입력해주세요."
-						style="margin: 11% 0 0 3%; border-bottom: 1px solid gray; width: 75%;">
-					<input type="button" class="btn_commit" value="등록">
+				<form>
+					<input type="hidden" id="titleId" value="${content.title}">
+					<input type="text" placeholder="한줄평을 입력해주세요." id="reply-content" style="margin: 11% 0 0 3%; border-bottom: 1px solid gray; width: 75%;">
+					<input type="button" class="btn_commit" id="btn-reply-save"  value="등록">
+				</form>
 				</div>
 			</div>
-		</form>
 	</div>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=62da32945b5c454aa1ead3fcbcb82fe4"></script>
@@ -340,6 +331,7 @@ a:hover.map_Content {
            overlay.setMap(null);     
        }
       </script>
+      <script src="/js/detail.js"></script>
 </body>
 </html>
 

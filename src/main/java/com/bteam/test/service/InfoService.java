@@ -25,6 +25,7 @@ public class InfoService {
 		content.setLatitude(result.getLatitude());
 		content.setLongitude(result.getLongitude());
 		content.setImgpath(result.getImgpath());
+		content.setReplys(result.getReplys());
 		
 		return content;
 	}

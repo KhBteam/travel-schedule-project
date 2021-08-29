@@ -47,7 +47,7 @@
 
 <c:forEach var="api" items="${apiList}"><br>
 	
-<div class="card" onclick="location.href='/search/${api.title}'" style="max-width: 900px; margin: 0 auto; border-color: #b8b8b8; cursor:pointer">
+<div class="card" onclick="location.href='/detail/${api.title}'" style="max-width: 900px; margin: 0 auto; border-color: #b8b8b8; cursor:pointer">
 	<form action="/search/${api.title}" method="get">
     <div class="card-body" style="padding:0;">
     	<div style="display: block; width: 100%; max-width: 300px; float:left;">
