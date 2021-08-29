@@ -48,4 +48,14 @@ public class User {
 	private String kakaoId; //oauth 확인
 	
 	private String birth; //생일
+	
+	// email password 수정
+		public void update(UserDto userdto ,String password) {
+
+			this.userEmail = userdto.getUserEmail();
+			this.password=password;
+		}
+
+		
+	
 }

@@ -35,6 +35,23 @@ public class PrincipalDetail implements UserDetails {
 	public String getUsername() {
 		return user.getUsername();
 	}
+	
+	public String getName() {
+		return user.getName();
+	}
+	
+	public String getEmail() {
+		return user.getUserEmail();
+	}
+	
+	public String getBirth() {
+		return user.getBirth();
+	}
+	
+	public Long getId() {
+		return user.getId();
+	}
+	
 
 	//계정 만료되지 않았는지 확인 (true: 만료 안됨)
 	@Override

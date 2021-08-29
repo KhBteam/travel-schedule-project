@@ -2,11 +2,13 @@ package com.bteam.test.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bteam.test.UserRepository;
 import com.bteam.test.model.User;
+import com.bteam.test.model.UserDto;
 import com.bteam.test.model.UserRole;
 
 
@@ -19,9 +21,13 @@ import javax.servlet.http.HttpServletResponse;
 @Service
 public class UserService {
 
-	@Autowired
-	private UserRepository repository;
 	
+
+	
+	
+	@Autowired
+	private  UserRepository repository;
+		
 	//회원찾기
 	@Transactional(readOnly=true)
 	public User findUser(String username) {
@@ -52,6 +58,22 @@ public class UserService {
 			return -1;
 		}
 	}
+	//개인정보 변경	
+	@Transactional
+
+		public Long update(Long id, UserDto userdto ) {
+			User user=repository.findById(id).orElseThrow(
+	                () -> new NullPointerException("아이디가 없습니다.")
+			        );		
+			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+			System.out.println("222");
+			System.out.println(user.getPassword());
+			String password = passwordEncoder.encode(userdto.getPassword());
+			System.out.println("333");
+			user.update(userdto, password);
+			return id;
+		}
+	
 	
 	@Transactional
 	public String findByEmail(HttpServletResponse response, User user, String email) throws Exception {
