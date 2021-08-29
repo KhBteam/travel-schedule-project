@@ -59,4 +59,6 @@ public class FaqApiController {
 		faqService.댓글삭제(replyId);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
+	
 }

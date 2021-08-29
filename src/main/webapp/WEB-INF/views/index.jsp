@@ -94,7 +94,7 @@
 
 <div class="grid">
 	<c:forEach var="random" items="${randomIndex}"> 
-		<div class="item" style="cursor:pointer" onclick="location.href='/search/${random.title}'">
+		<div class="item" style="cursor:pointer" onclick="location.href='/detail/${random.title}'">
 		   <img src="${random.thumbnailpath}"><br><br>
 		   <div class="title">
 		      <p>${random.title}</p>
