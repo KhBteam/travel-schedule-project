@@ -66,7 +66,7 @@
 					</c:when>
 					<c:otherwise>
 					
-					<li><a href="sign_up_update.html">회원정보페이지</a></li>
+					<li><a href="/user/mypage">회원정보페이지</a></li>
 					<li><a href="/logout">로그아웃</a></li>
 					</c:otherwise>
 					</c:choose>
